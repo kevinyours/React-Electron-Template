@@ -1,0 +1,38 @@
+{
+    "name": "MyProduct-Beta",
+    "build": {
+        "appId": "com.pc.myproduct-beta",
+        "productName": "MyProduct-Beta",
+        "artifactName": "${productName}-${version}.${ext}",
+        "copyright": "Copyright © 2020 ${author}",
+        "mac": {
+            "category": "public.app-category.utilities",
+            "target": "dmg",
+            "asar": true
+        },
+        "win": {
+            "requestedExecutionLevel": "requireAdministrator",
+            "target": [
+                {
+                    "target": "nsis",
+                    "arch": ["x64", "ia32"]
+                }
+            ],
+            "asar": true
+        },
+        "nsis": {
+            "createDesktopShortcut": true,
+            "createStartMenuShortcut": true,
+            "deleteAppDataOnUninstall": true,
+            "oneClick": false,
+            "perMachine": false,
+            "allowToChangeInstallationDirectory": true,
+            "shortcutName": "MyProduct-Beta",
+            "uninstallDisplayName": "MyProduct-Beta"
+        },
+        "files": ["build/**/*", "node_modules/**/*", "package.json"],
+        "directories": {
+            "buildResources": "assets/dev"
+        }
+    }
+}
