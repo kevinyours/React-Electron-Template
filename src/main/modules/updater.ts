@@ -17,19 +17,19 @@ export default ({
         autoUpdater.checkForUpdates();
     });
 
-    autoUpdater.on('update-available', function() {
+    autoUpdater.on('update-available', function () {
         webContents.send('UPDATE_AVAILABLE', true);
     });
 
     autoUpdater.on('download-progress', (processObj: any) => webContents.send('DOWNLOAD_UPDATE', processObj));
 
-    autoUpdater.on('update-downloaded', function(event: Electron.Event) {
+    autoUpdater.on('update-downloaded', function (event: Electron.Event) {
         app.focus();
 
         try {
             mainWindow.setClosable(true);
             autoUpdater.quitAndInstall();
-            setTimeout(function() {
+            setTimeout(function () {
                 app.relaunch();
                 app.quit();
             }, 1000);

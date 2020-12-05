@@ -20,11 +20,6 @@
     "start:main": "electron static/main.js",
     "start": "cross-env NODE_ENV=DEVELOPMENT ELECTRON_DEBUG=true && concurrently \"yarn build:main\" \"yarn start:renderer\" \"wait-on http://localhost:3100 && yarn start:main\""
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.{ts,tsx}": [
       "eslint . --fix './src/**/*.{ts,tsx}'",
@@ -88,48 +83,5 @@
     "prettier": "^2.2.1",
     "typescript": "^4.1.2",
     "wait-on": "^5.2.0"
-  },
-  "name": "MyProduct-Beta",
-  "build": {
-    "appId": "com.pc.myproduct-beta",
-    "productName": "MyProduct-Beta",
-    "artifactName": "${productName}-${version}.${ext}",
-    "copyright": "Copyright © 2020 ${author}",
-    "mac": {
-      "category": "public.app-category.utilities",
-      "target": "dmg",
-      "asar": true
-    },
-    "win": {
-      "requestedExecutionLevel": "requireAdministrator",
-      "target": [
-        {
-          "target": "nsis",
-          "arch": [
-            "x64",
-            "ia32"
-          ]
-        }
-      ],
-      "asar": true
-    },
-    "nsis": {
-      "createDesktopShortcut": true,
-      "createStartMenuShortcut": true,
-      "deleteAppDataOnUninstall": true,
-      "oneClick": false,
-      "perMachine": false,
-      "allowToChangeInstallationDirectory": true,
-      "shortcutName": "MyProduct-Beta",
-      "uninstallDisplayName": "MyProduct-Beta"
-    },
-    "files": [
-      "build/**/*",
-      "node_modules/**/*",
-      "package.json"
-    ],
-    "directories": {
-      "buildResources": "assets/dev"
-    }
   }
 }
