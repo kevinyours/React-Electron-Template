@@ -1,1 +1,1 @@
-# Electron Template V2
+# React Electron Starter Template
