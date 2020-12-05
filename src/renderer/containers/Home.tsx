@@ -1,4 +1,3 @@
-import Iframe from 'react-iframe';
 import { Layout, IframeWindow } from '../components';
 import * as React from 'react';
 

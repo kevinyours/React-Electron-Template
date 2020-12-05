@@ -60,7 +60,6 @@ function createWindow(): void {
     });
 
     mainWindow.on('closed', () => {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
         //@ts-ignore
         mainWindow = undefined;
         globalShortcut.unregisterAll();

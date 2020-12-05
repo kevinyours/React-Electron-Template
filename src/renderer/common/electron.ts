@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-ignore */
 // @ts-ignore
 export const ipcRenderer = window.ipcRenderer;
 // @ts-ignore

@@ -1,4 +1,4 @@
 export default {
-    OKKY: 'https://okky.kr/',
+    SEEKO: 'https://seeko.kr/',
     SLR_CLUB: 'http://www.slrclub.com/',
 };

@@ -27,7 +27,7 @@ export default class Store implements StoreProps {
 
     @action
     switchWindow(type: boolean): void {
-        this.display.currentWindow = type === true ? URL.SLR_CLUB : URL.OKKY;
+        this.display.currentWindow = type === true ? URL.SLR_CLUB : URL.SEEKO;
     }
 
     @action

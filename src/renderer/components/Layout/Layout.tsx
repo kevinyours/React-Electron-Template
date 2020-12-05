@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 type Props = {
     children: React.ReactNode;
@@ -12,7 +12,7 @@ const Container = styled.div`
     }
 `;
 
-export const Layout: React.FunctionComponent<Props> = props => (
+export const Layout: React.FunctionComponent<Props> = (props) => (
     <Container>
         <main>{props.children}</main>
     </Container>
