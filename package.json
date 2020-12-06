@@ -1,6 +1,6 @@
 {
-  "version": "0.0.2",
-  "description": "Electron Template V2",
+  "version": "0.1.0",
+  "description": "React Electron Starter Template",
   "main": "build/main.js",
   "repository": "https://github.com/kevin-grylls/electron-template",
   "author": "kevin-grylls <eilgwon88@gmail.com>",
@@ -18,7 +18,9 @@
     "release": "yarn build && yarn config:prod && electron-builder -mw --publish=never",
     "start:renderer": "parcel serve src/renderer/index.html -p 3100 --no-cache",
     "start:main": "electron static/main.js",
-    "start": "cross-env NODE_ENV=DEVELOPMENT ELECTRON_DEBUG=true && concurrently \"yarn build:main\" \"yarn start:renderer\" \"wait-on http://localhost:3100 && yarn start:main\""
+    "start": "cross-env NODE_ENV=DEVELOPMENT ELECTRON_DEBUG=true && concurrently \"yarn build:main\" \"yarn start:renderer\" \"wait-on http://localhost:3100 && yarn start:main\"",
+    "test": "jest -w --passWithNoTests",
+    "test:e2e": "cypress open"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
@@ -70,6 +72,8 @@
     "babel-jest": "^26.6.3",
     "concurrently": "^5.3.0",
     "cross-env": "^7.0.3",
+    "cypress": "^6.0.1",
+    "devtron": "^1.4.0",
     "electron": "^11.0.3",
     "electron-builder": "^22.9.1",
     "eslint": "^7.14.0",
